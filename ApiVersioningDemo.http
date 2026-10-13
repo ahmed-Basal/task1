@@ -1,0 +1,35 @@
+@ApiVersioningDemo_HostAddress = http://localhost:5211
+
+### 1. Test V1 Products (Legacy format - flat list without category)
+GET {{ApiVersioningDemo_HostAddress}}/api/v1/products
+Accept: application/json
+
+###
+
+### 2. Test V1 Product by ID
+GET {{ApiVersioningDemo_HostAddress}}/api/v1/products/1
+Accept: application/json
+
+###
+
+### 3. Test V2 Products (New format - includes CategoryName & structured response envelope)
+GET {{ApiVersioningDemo_HostAddress}}/api/v2/products
+Accept: application/json
+
+###
+
+### 4. Test V2 Product by ID
+GET {{ApiVersioningDemo_HostAddress}}/api/v2/products/1
+Accept: application/json
+
+###
+
+### 5. Swagger V1 JSON Specification
+GET {{ApiVersioningDemo_HostAddress}}/swagger/v1/swagger.json
+Accept: application/json
+
+###
+
+### 6. Swagger V2 JSON Specification
+GET {{ApiVersioningDemo_HostAddress}}/swagger/v2/swagger.json
+Accept: application/json
