@@ -18,18 +18,28 @@ public class ProductsController : ControllerBase
     };
 
     /// <summary>
-    /// GET /api/v1/products - Returns product data in the legacy (v1) flat format.
+    /// Retrieves all products in the legacy (V1) format.
     /// </summary>
+    /// <remarks>
+    /// This endpoint serves existing/legacy clients by returning a flat array of products with basic fields (ID, Name, Price).
+    /// </remarks>
+    /// <response code="200">Returns the list of products in the original format.</response>
     [HttpGet]
+    [ProducesResponseType(typeof(IEnumerable<ProductV1>), StatusCodes.Status200OK)]
     public ActionResult<IEnumerable<ProductV1>> Get()
     {
         return Ok(Products);
     }
 
     /// <summary>
-    /// GET /api/v1/products/{id}
+    /// Retrieves a single product by its unique ID in the legacy (V1) format.
     /// </summary>
+    /// <param name="id">The unique identifier of the product.</param>
+    /// <response code="200">Returns the requested product.</response>
+    /// <response code="404">If the product with the specified ID was not found.</response>
     [HttpGet("{id:int}")]
+    [ProducesResponseType(typeof(ProductV1), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public ActionResult<ProductV1> GetById(int id)
     {
         var product = Products.FirstOrDefault(p => p.Id == id);

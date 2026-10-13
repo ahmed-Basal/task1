@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiVersioningDemo</name>
+    </assembly>
+    <members>
+        <member name="M:ApiVersioningDemo.Controllers.V1.ProductsController.Get">
+            <summary>
+            Retrieves all products in the legacy (V1) format.
+            </summary>
+            <remarks>
+            This endpoint serves existing/legacy clients by returning a flat array of products with basic fields (ID, Name, Price).
+            </remarks>
+            <response code="200">Returns the list of products in the original format.</response>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.V1.ProductsController.GetById(System.Int32)">
+            <summary>
+            Retrieves a single product by its unique ID in the legacy (V1) format.
+            </summary>
+            <param name="id">The unique identifier of the product.</param>
+            <response code="200">Returns the requested product.</response>
+            <response code="404">If the product with the specified ID was not found.</response>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.V2.ProductsController.Get">
+            <summary>
+            Retrieves all products in the modern (V2) format.
+            </summary>
+            <remarks>
+            This endpoint represents the upgraded API version. It returns a structured response envelope
+            including metadata (success flag, total count, apiVersion) and includes additional product properties like CategoryName, Description, and InStock status.
+            </remarks>
+            <response code="200">Returns the enveloped list of products with enhanced schema.</response>
+        </member>
+        <member name="M:ApiVersioningDemo.Controllers.V2.ProductsController.GetById(System.Int32)">
+            <summary>
+            Retrieves a single product by its unique ID in the modern (V2) format.
+            </summary>
+            <param name="id">The unique identifier of the product.</param>
+            <response code="200">Returns the product wrapped in the V2 response envelope.</response>
+            <response code="404">If the product with the specified ID was not found.</response>
+        </member>
+        <member name="T:ApiVersioningDemo.Models.V1.ProductV1">
+            <summary>
+            Represents a product in the legacy (V1) data model.
+            </summary>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V1.ProductV1.Id">
+            <summary>
+            The unique product identifier.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V1.ProductV1.Name">
+            <summary>
+            The name of the product.
+            </summary>
+            <example>Laptop Dell XPS</example>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V1.ProductV1.Price">
+            <summary>
+            The price of the product in USD.
+            </summary>
+            <example>1500.00</example>
+        </member>
+        <member name="T:ApiVersioningDemo.Models.V2.ApiResponseV2`1">
+            <summary>
+            Generic API response envelope used across Version 2 endpoints.
+            </summary>
+            <typeparam name="T">The type of the payload data returned.</typeparam>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V2.ApiResponseV2`1.Success">
+            <summary>
+            Indicates whether the request succeeded.
+            </summary>
+            <example>true</example>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V2.ApiResponseV2`1.ApiVersion">
+            <summary>
+            The API version that handled the request.
+            </summary>
+            <example>2.0</example>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V2.ApiResponseV2`1.Message">
+            <summary>
+            Descriptive status message or error information.
+            </summary>
+            <example>Products retrieved successfully in V2 format.</example>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V2.ApiResponseV2`1.TotalCount">
+            <summary>
+            Total number of items in the response payload.
+            </summary>
+            <example>4</example>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V2.ApiResponseV2`1.Data">
+            <summary>
+            The actual response payload data.
+            </summary>
+        </member>
+        <member name="T:ApiVersioningDemo.Models.V2.ProductV2">
+            <summary>
+            Represents an enhanced product in the modern (V2) data model.
+            </summary>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V2.ProductV2.Id">
+            <summary>
+            The unique product identifier.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V2.ProductV2.Name">
+            <summary>
+            The detailed commercial name of the product.
+            </summary>
+            <example>Laptop Dell XPS 15</example>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V2.ProductV2.Price">
+            <summary>
+            The price of the product in USD.
+            </summary>
+            <example>1500.00</example>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V2.ProductV2.CategoryName">
+            <summary>
+            The category name the product belongs to (New in V2).
+            </summary>
+            <example>Computers &amp; Laptops</example>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V2.ProductV2.InStock">
+            <summary>
+            Availability status indicating whether the item is in stock.
+            </summary>
+            <example>true</example>
+        </member>
+        <member name="P:ApiVersioningDemo.Models.V2.ProductV2.Description">
+            <summary>
+            Comprehensive description of features and specifications.
+            </summary>
+            <example>15-inch display, Intel Core i7 processor, 32GB RAM, 1TB SSD</example>
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>

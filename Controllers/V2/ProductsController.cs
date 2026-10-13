@@ -50,9 +50,15 @@ public class ProductsController : ControllerBase
     };
 
     /// <summary>
-    /// GET /api/v2/products - Returns product data in the new (v2) format including CategoryName and enveloped response.
+    /// Retrieves all products in the modern (V2) format.
     /// </summary>
+    /// <remarks>
+    /// This endpoint represents the upgraded API version. It returns a structured response envelope
+    /// including metadata (success flag, total count, apiVersion) and includes additional product properties like CategoryName, Description, and InStock status.
+    /// </remarks>
+    /// <response code="200">Returns the enveloped list of products with enhanced schema.</response>
     [HttpGet]
+    [ProducesResponseType(typeof(ApiResponseV2<IEnumerable<ProductV2>>), StatusCodes.Status200OK)]
     public ActionResult<ApiResponseV2<IEnumerable<ProductV2>>> Get()
     {
         var response = new ApiResponseV2<IEnumerable<ProductV2>>
@@ -68,9 +74,14 @@ public class ProductsController : ControllerBase
     }
 
     /// <summary>
-    /// GET /api/v2/products/{id}
+    /// Retrieves a single product by its unique ID in the modern (V2) format.
     /// </summary>
+    /// <param name="id">The unique identifier of the product.</param>
+    /// <response code="200">Returns the product wrapped in the V2 response envelope.</response>
+    /// <response code="404">If the product with the specified ID was not found.</response>
     [HttpGet("{id:int}")]
+    [ProducesResponseType(typeof(ApiResponseV2<ProductV2>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponseV2<ProductV2>), StatusCodes.Status404NotFound)]
     public ActionResult<ApiResponseV2<ProductV2>> GetById(int id)
     {
         var product = Products.FirstOrDefault(p => p.Id == id);

@@ -22,7 +22,7 @@
 
 4. **التأكد إن الإصدارين بيشتغلوا بشكل مستقل**:
    - وحدة تحكم منفصلة لكل إصدار: `Controllers/V1/ProductsController.cs` و `Controllers/V2/ProductsController.cs`.
-   - توثيق تفاعلي كامل على **Swagger UI** مع قائمة منسدلة للاختيار بين `v1` و `v2`.
+   - توثيق تفاعلي كامل على **Swagger UI** و **Scalar**.
 
 ---
 
@@ -35,25 +35,43 @@ dotnet run
 ```
 
 سيعمل الخادم على:
+
 - `http://localhost:5211`
 
 ---
 
-## 📖 واجهة Swagger UI
+## 📖 واجهة التوثيق التفاعلية (Swagger UI & Scalar)
 
-افتح المتصفح على الرابط التالي لتجربة الـ Endpoints مباشرة:
-```
+### 1. واجهة Swagger UI
+
+افتح المتصفح على:
+
+```text
 http://localhost:5211/swagger/index.html
 ```
+
 يمكنك التبديل بين `v1` و `v2` من القائمة المنسدلة في أعلى يمين صفحة Swagger.
+
+### 2. واجهة Scalar API Reference (الحديثة)
+
+تمت إضافة مكتبة **Scalar.AspNetCore** لتقديم واجهة توثيق عصرية مع Theme مميز:
+
+- واجهة Scalar العامة:
+  `http://localhost:5211/scalar`
+- توثيق الإصدار الأول (V1):
+  `http://localhost:5211/scalar/v1`
+- توثيق الإصدار الثاني (V2):
+  `http://localhost:5211/scalar/v2`
 
 ---
 
 ## 🧪 الـ Endpoints وتنسيق البيانات
 
 ### 1. الإصدار الأول (V1)
+
 - **الرابط**: `GET http://localhost:5211/api/v1/products`
 - **الشكل العائد (Array)**:
+
 ```json
 [
   {
@@ -72,8 +90,10 @@ http://localhost:5211/swagger/index.html
 ---
 
 ### 2. الإصدار الثاني (V2)
+
 - **الرابط**: `GET http://localhost:5211/api/v2/products`
 - **الشكل العائد (Wrapped Object مع CategoryName)**:
+
 ```json
 {
   "success": true,
@@ -105,7 +125,7 @@ http://localhost:5211/swagger/index.html
 
 ## 📁 هيكل المشروع
 
-```
+```text
 ApiVersioningDemo/
 ├── Controllers/
 │   ├── V1/

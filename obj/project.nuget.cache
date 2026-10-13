@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "C00tUAuwUxc=",
+  "dgSpecHash": "dxWlP1RaV/U=",
   "success": true,
   "projectFilePath": "c:\\Users\\ahmed\\OneDrive\\Desktop\\New folder (6)\\ApiVersioningDemo.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\ahmed\\.nuget\\packages\\asp.versioning.mvc.apiexplorer\\10.2.1\\asp.versioning.mvc.apiexplorer.10.2.1.nupkg.sha512",
     "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.extensions.apidescription.server\\10.0.0\\microsoft.extensions.apidescription.server.10.0.0.nupkg.sha512",
     "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.openapi\\2.7.5\\microsoft.openapi.2.7.5.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\scalar.aspnetcore\\2.18.0\\scalar.aspnetcore.2.18.0.nupkg.sha512",
     "C:\\Users\\ahmed\\.nuget\\packages\\swashbuckle.aspnetcore\\10.3.0\\swashbuckle.aspnetcore.10.3.0.nupkg.sha512",
     "C:\\Users\\ahmed\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\10.3.0\\swashbuckle.aspnetcore.swagger.10.3.0.nupkg.sha512",
     "C:\\Users\\ahmed\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\10.3.0\\swashbuckle.aspnetcore.swaggergen.10.3.0.nupkg.sha512",

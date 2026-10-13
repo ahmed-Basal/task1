@@ -39,3 +39,7 @@ C:\Users\ahmed\OneDrive\Desktop\New folder (6)\obj\Debug\net11.0\refint\ApiVersi
 C:\Users\ahmed\OneDrive\Desktop\New folder (6)\obj\Debug\net11.0\ApiVersioningDemo.pdb
 C:\Users\ahmed\OneDrive\Desktop\New folder (6)\obj\Debug\net11.0\ApiVersioningDemo.genruntimeconfig.cache
 C:\Users\ahmed\OneDrive\Desktop\New folder (6)\obj\Debug\net11.0\ref\ApiVersioningDemo.dll
+C:\Users\ahmed\OneDrive\Desktop\New folder (6)\bin\Debug\net11.0\Scalar.AspNetCore.dll
+C:\Users\ahmed\OneDrive\Desktop\New folder (6)\obj\Debug\net11.0\ApiVersioningDemo.sourcelink.json
+C:\Users\ahmed\OneDrive\Desktop\New folder (6)\bin\Debug\net11.0\ApiVersioningDemo.xml
+C:\Users\ahmed\OneDrive\Desktop\New folder (6)\obj\Debug\net11.0\ApiVersioningDemo.xml

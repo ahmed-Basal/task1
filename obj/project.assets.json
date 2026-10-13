@@ -96,6 +96,22 @@
           }
         }
       },
+      "Scalar.AspNetCore/2.18.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Swashbuckle.AspNetCore/10.3.0": {
         "type": "package",
         "dependencies": {
@@ -515,6 +531,25 @@
         "microsoft.openapi.nuspec"
       ]
     },
+    "Scalar.AspNetCore/2.18.0": {
+      "sha512": "wwI3khcYNM7oL6axr4a41G29fJYOS3ckusgYZ4NiIccL8Amh2LOeu4HSK1SrQWiMJNrgoFqyWfDkOkunQCiRDw==",
+      "type": "package",
+      "path": "scalar.aspnetcore/2.18.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/Scalar.AspNetCore.dll",
+        "lib/net10.0/Scalar.AspNetCore.xml",
+        "lib/net8.0/Scalar.AspNetCore.dll",
+        "lib/net8.0/Scalar.AspNetCore.xml",
+        "lib/net9.0/Scalar.AspNetCore.dll",
+        "lib/net9.0/Scalar.AspNetCore.xml",
+        "scalar.aspnetcore.2.18.0.nupkg.sha512",
+        "scalar.aspnetcore.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/10.3.0": {
       "sha512": "y76EI71vcrsXfjw+HrUJaf9lRYulqb+0vzRFkKDgCyzK8GY6O0F0mTDWUEK2tUYbpkifHTaQTpT4tkh7f/q1kA==",
       "type": "package",
@@ -597,6 +632,7 @@
     "net11.0": [
       "Asp.Versioning.Mvc >= 10.2.1",
       "Asp.Versioning.Mvc.ApiExplorer >= 10.2.1",
+      "Scalar.AspNetCore >= 2.18.0",
       "Swashbuckle.AspNetCore >= 10.3.0"
     ]
   },
@@ -652,6 +688,10 @@
           "Asp.Versioning.Mvc.ApiExplorer": {
             "target": "Package",
             "version": "[10.2.1, )"
+          },
+          "Scalar.AspNetCore": {
+            "target": "Package",
+            "version": "[2.18.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

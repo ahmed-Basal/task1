@@ -2,6 +2,7 @@ using ApiVersioningDemo;
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
 using Microsoft.Extensions.Options;
+using Scalar.AspNetCore;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -55,6 +56,14 @@ if (app.Environment.IsDevelopment())
                 $"Products API - {description.GroupName.ToUpperInvariant()}"
             );
         }
+    });
+
+    // Scalar API Reference (modern OpenAPI documentation UI)
+    app.MapScalarApiReference(options =>
+    {
+        options.WithTitle("Products API - Scalar Documentation")
+               .WithTheme(ScalarTheme.Moon)
+               .WithOpenApiRoutePattern("/swagger/{documentName}/swagger.json");
     });
 }
 

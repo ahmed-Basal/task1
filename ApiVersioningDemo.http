@@ -33,3 +33,13 @@ Accept: application/json
 ### 6. Swagger V2 JSON Specification
 GET {{ApiVersioningDemo_HostAddress}}/swagger/v2/swagger.json
 Accept: application/json
+
+###
+
+### 7. Scalar API Reference UI
+# Open in browser:
+# http://localhost:5211/scalar
+# http://localhost:5211/scalar/v1
+# http://localhost:5211/scalar/v2
+GET {{ApiVersioningDemo_HostAddress}}/scalar/v1
+Accept: text/html
